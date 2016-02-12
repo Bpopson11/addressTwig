@@ -6,15 +6,14 @@
 </head>
 <body>
   <div class="container">
-
-    <h1>Address book goodness</h1>
+    <h1 class="addressBook">Address book</h1>
     <div class="row">
       <div class="col-md-6">
         <form action='/contacts' method='post'>
           <div class="form-group">
             <label for='name'>Contact Name</label>
             <input id='name' name='name' type='text' class="form-control">
-            <label for='phone'>Phone Number</label>
+            <label for='phone'>Phone Number <small>Please include dashes</small></label>
             <input id='phone' name='phone' type='text' class="form-control">
             <label for='street'>Street Address</label>
             <input id='street' name='street' type='text' class="form-control">
@@ -25,18 +24,18 @@
             <label for='zip'>Zip</label>
             <input id='zip' name='zip' type='text' class="form-control">
           </div>
-            <button type='submit'>Add Contact</button>
+            <button class="btn" type='submit'>Add Contact</button>
         </form>
         <form action='/delete_contacts' method='post'>
-            <button type='submit'>Clear</button>
+            <button class="btn" type='submit'>Clear</button>
         </form>
         </div>
         <div class="col-md-6">
           {% if contacts is not empty %}
-              <p>Your Contacts:</p>
+              <h4>Your Contacts:</h4>
               <ul>
                 {% for contact in contacts %}
-                  <li>{{ contact.getName }}</li>
+                  <li class="name">{{ contact.getName }}</li>
                   <ul>
                   <li>{{ contact.getPhone }}</li>
                   <li>{{ contact.getStreet }},  {{ contact.getCity }}, {{ contact.getState }} {{ contact.getZip }} </li>

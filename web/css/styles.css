@@ -2,4 +2,13 @@ body {
   background-image: url(http://www.caronfence.com/wp-content/uploads/2014/05/background-light-caron-fence.png);
   background-repeat: no-repeat;
   background-size: cover;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.name {
+  font-size: 17px;
+}
+
+.addressBook {
+  font-size: 50px;
 }

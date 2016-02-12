@@ -15,7 +15,6 @@ _With this app the user is able to enter in contact information for a contact an
 * _Clone or fork Git_
 * _If git was cloned, please make a separate branch for any changes_
 * _Open code in a program like Atom_
-* _HTML pages can be viewed in any web browser._
 * _Commit an desired changes_
 * _Push commit and send push request__
 
