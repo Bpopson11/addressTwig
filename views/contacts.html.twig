@@ -5,49 +5,47 @@
     <title>Address book!</title>
 </head>
 <body>
-    <div class="container">
+  <div class="container">
 
     <h1>Address book goodness</h1>
-
-
-    {% if contacts is not empty %}
-        <p>Your Contacts:</p>
-        <ul>
-            {% for contact in contacts %}
-                <li>{{ contact.getName }}</li>
+    <div class="row">
+      <div class="col-md-6">
+        <form action='/contacts' method='post'>
+          <div class="form-group">
+            <label for='name'>Contact Name</label>
+            <input id='name' name='name' type='text' class="form-control">
+            <label for='phone'>Phone Number</label>
+            <input id='phone' name='phone' type='text' class="form-control">
+            <label for='street'>Street Address</label>
+            <input id='street' name='street' type='text' class="form-control">
+            <label for='city'>City</label>
+            <input id='city' name='city' type='text' class="form-control">
+            <label for='state'>State</label>
+            <input id='state' name='state' type='text' class="form-control">
+            <label for='zip'>Zip</label>
+            <input id='zip' name='zip' type='text' class="form-control">
+          </div>
+            <button type='submit'>Add Contact</button>
+        </form>
+        <form action='/delete_contacts' method='post'>
+            <button type='submit'>Clear</button>
+        </form>
+        </div>
+        <div class="col-md-6">
+          {% if contacts is not empty %}
+              <p>Your Contacts:</p>
               <ul>
-                <li>{{ contact.getPhone }}</li>
-                {% if addresses is not empty %}
-                  {% for address in addresses %}
-                <li>{{ address.getStreet }},  {{ address.getCity }}, {{ address.getState }} {{ address.getZip }} </li>
-                  {% endfor %}
-                {% endif %}
+                {% for contact in contacts %}
+                  <li>{{ contact.getName }}</li>
+                  <ul>
+                  <li>{{ contact.getPhone }}</li>
+                  <li>{{ contact.getStreet }},  {{ contact.getCity }}, {{ contact.getState }} {{ contact.getZip }} </li>
+                  </ul>
+                {% endfor %}
               </ul>
-            {% endfor %}
-
-        </ul>
-    {% endif %}
-
-    <form action='/contacts' method='post'>
-      <div class="form-group">
-        <label for='name'>Contact Name</label>
-        <input id='name' name='name' type='text' class="form-control">
-        <label for='phone'>Phone Number</label>
-        <input id='phone' name='phone' type='text' class="form-control">
-        <label for='street'>Street Address</label>
-        <input id='street' name='street' type='text' class="form-control">
-        <label for='city'>City</label>
-        <input id='city' name='city' type='text' class="form-control">
-        <label for='state'>State</label>
-        <input id='state' name='state' type='text' class="form-control">
-        <label for='zip'>Zip</label>
-        <input id='zip' name='zip' type='text' class="form-control">
-      </div>
-        <button type='submit'>Add Contact</button>
-    </form>
-    <form action='/delete_contacts' method='post'>
-        <button type='submit'>Clear</button>
-    </form>
-      </div>
+          {% endif %}
+        </div>
+    </div>
+  </div>
 </body>
 </html>
