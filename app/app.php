@@ -10,6 +10,7 @@
         $_SESSION['list_of_addresses'] = array();
     }
 
+
     $app = new Silex\Application();
 
 
@@ -18,7 +19,7 @@
     ));
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll(), 'contacts' => Address::getAll()));
+        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll(), 'addresses' => Address::getAll()));
     });
 
     $app->post("/contacts", function() use ($app) {
@@ -28,6 +29,9 @@
         $address->save();
         return $app['twig']->render('create_contact.html.twig', array('newcontact' => $contact));
     });
+
+
+    $app["debug"] = true;
 
     $app->post("/delete_contacts", function() use ($app) {
         Contact::deleteAll();
