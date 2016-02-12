@@ -1,60 +1,73 @@
 <?php
-class Contact
+class Address
 {
-    private $name;
-    private $phone;
-    private $address;
+    private $street;
+    private $city;
+    private $state;
+    private $zip;
 
-    function __construct($name, $phone, $address)
+
+    function __construct($street, $city, $state, $zip)
     {
-        $this->name = $name;
-        $this->phone = $phone;
-        $this->address = $address;
+        $this->street = $street;
+        $this->city = $city;
+        $this->state = $state;
+        $this->zip = $zip;
     }
 
-    function setName($new_name)
+    function setStreet($new_street)
     {
-        $this->name = (string) $new_name;
+        $this->street = (string) $new_street;
     }
 
-    function getName()
+    function getStreet()
     {
-        return $this->name;
+        return $this->street;
     }
 
-    function setPhone($new_phone)
+    function setCity($new_city)
     {
-        $this->phone = (string) $new_phone;
+        $this->city = (string) $new_city;
     }
 
-    function getPhone()
+    function getCity()
     {
-        return $this->phone;
+        return $this->city;
     }
 
-    function setAddress($new_address)
+    function setState($new_state)
     {
-        $this->address = (string) $new_address;
+        $this->state = (string) $new_state;
     }
 
-    function getAddress()
+    function getState()
     {
-        return $this->address;
+        return $this->state;
+    }
+
+    function setZip($new_zip)
+    {
+        $this->zip = (string) $new_zip;
+    }
+
+    function getZip()
+    {
+        return $this->zip;
     }
 
     function save()
     {
-        array_push($_SESSION['list_of_contacts'], $this);
+        array_push($_SESSION['list_of_addresses'], $this);
     }
 
     static function getAll()
     {
-        return $_SESSION['list_of_contacts'];
+        return $_SESSION['list_of_addresses'];
     }
 
     static function deleteAll()
     {
-        $_SESSION['list_of_contacts'] = array();
+        $_SESSION['list_of_addresses'] = array();
     }
 }
 ?>

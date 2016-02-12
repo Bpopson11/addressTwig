@@ -16,7 +16,10 @@
                 <li>{{ contact.getName }}</li>
               <ul>
                 <li>{{ contact.getPhone }}</li>
-                <li>{{ contact.getAddress }}</li>
+                <li>{{ address.getStreet }}</li>
+                <li>{{ address.getCity }}</li>
+                <li>{{ address.getState }}</li>
+                <li>{{ address.getZip }}</li>
               </ul>
             {% endfor %}
         </ul>
@@ -27,12 +30,19 @@
         <input id='name' name='name' type='text'>
         <label for='phone'>Phone Number</label>
         <input id='phone' name='phone' type='text'>
-        <label for='address'>Address</label>
-        <input id='address' name='address' type='text'>                
+        <label for='street'>Street Address</label>
+        <input id='street' name='street' type='text'>
+        <label for='city'>City</label>
+        <input id='city' name='city' type='text'>
+        <label for='state'>State</label>
+        <input id='state' name='state' type='text'>
+        <label for='zip'>Zip</label>
+        <input id='zip' name='zip' type='text'>
+
 
         <button type='submit'>Add task</button>
     </form>
-    <form action='/delete_tasks' method='post'>
+    <form action='/delete_contacts' method='post'>
         <button type='submit'>Clear</button>
     </form>
       </div>

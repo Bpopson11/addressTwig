@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__."/../vendor/autoload.php";
-    require_once __DIR__."/../src/address.php";
+    require_once __DIR__."/../contact.php";
+    require_once __DIR__."/../address.php";
 
     session_start();
 
@@ -14,6 +15,10 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
     ));
+
+    $app->get("/", function() use ($app) {
+        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
+    });
 
     return $app;
 ?>
