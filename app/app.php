@@ -7,6 +7,7 @@
 
     if (empty($_SESSION['list_of_contacts'])) {
         $_SESSION['list_of_contacts'] = array();
+        $_SESSION['list_of_addresses'] = array();        
     }
 
     $app = new Silex\Application();
@@ -17,7 +18,7 @@
     ));
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
+        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll(), 'contacts' => Address::getAll()));
     });
 
     return $app;
