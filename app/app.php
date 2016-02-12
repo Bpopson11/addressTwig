@@ -27,7 +27,7 @@
         $address = new Address($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip']);
         $contact->save();
         $address->save();
-        return $app['twig']->render('create_contact.html.twig', array('newcontact' => $contact));
+        return $app['twig']->render('create_contact.html.twig', array('newcontact' => $contact , 'newaddress' => $address));
     });
 
 

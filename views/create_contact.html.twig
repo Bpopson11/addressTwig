@@ -5,9 +5,12 @@
     <title>Address</title>
 </head>
 <body>
-    <h1>You successfully added a contact to your book!</h1>
-    <p>{{ newcontact.getName }}</p>
-    <p>{{ newcontact.getPhone }}</p>
-    <p><a href='/'>View your current contacts.</a></p>
+    <div class="container">
+      <h1>You created a contact!</h1>
+      <p>{{ newcontact.getName }}</p>
+      <p>{{ newcontact.getPhone }}</p>
+      <p>{{ newaddress.getStreet }},  {{ newaddress.getCity }}, {{ newaddress.getState }} {{ newaddress.getZip }} </p>
+      <p><a href='/'>View your current contacts.</a></p>
+    </div>
 </body>
 </html>
