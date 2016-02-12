@@ -31,7 +31,6 @@ class Contact
         return $this->phone;
     }
 
-
     function save()
     {
         array_push($_SESSION['list_of_contacts'], $this);
