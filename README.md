@@ -1,6 +1,5 @@
 # _Address book_
 
-#### _[Link to site](http://bpopson11.github.io/addressTwig/)_
 
 #### _This is a PHP based app using Silex and Twig to create an address book._
 
